@@ -1,0 +1,94 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    database: job_service_db
+    url: test
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      ddl-auto: none
+#  flyway:
+#    locations: classpath:db/migration
+#    schemas: public
+#    enabled: true
+  main:
+    banner-mode: "off"
+  application:
+    name: "job-service"
+  data:
+    mongodb:
+     mongodb://localhost:27017/jobs_db?readPreference=primary&appname=MongoDB%20Compass&ssl=false
+  #    #uri: "mongodb://ridermaster:iamriderscb@docdb-2020-12-02-12-16-26.cluster-c0hznumax6jd.us-east-2.docdb.amazonaws.com:27017/?replicaSet=rs0&readPreference=secondaryPreferred&retryWrites=false"
+  #    uri: "mongodb+srv://api_user:7mAb2*nvUvEA@cluster0.h4rge.mongodb.net/jobs_db?retryWrites=true&w=majority"
+  #     database: jobs_db
+mongo:
+  dbName: "jobs_db"
+
+COMPANY: "SCB"
+PROJECT_NAME: "rider"
+DIST_TRACER_ENDPOINT: "http://jaeger-operator-jaeger-collector.default:14268/api/traces"
+
+secretsPath: c:/dev/secrets
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+server:
+  port: 8083
+
+logging:
+  level:
+    root: INFO
+    org:
+      springframework:
+        web: INFO
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
+    com:
+      memorynotfound: DEBUG
+
+kafka:
+  topic: rider-topic
+  notification-topic: notification
+  consumerGroupId: groupid
+  noOfConcurrentMessage: 10
+  server: localhost:9092
+  partitions: 1
+  groupInstanceId: rohsharm14
+
+callback:
+  url: http://localhost:8097
+
+pricingService:
+  path: http://localhost:8080
+
+customerPricingService:
+  path: https://customer-pricing-service.apps.dev.riderplatform.com
+
+riderProfileService:
+  path: http://localhost:8080
+
+rhinterfaceService:
+  path: http://localhost:8085
+
+locationService:
+  path: http://localhost:8085
+
+operationsPortal:
+  path: https://operations-portal.web-preprod.riderplatform.com
+operationsService:
+  path: http://localhost:8085
+
+job:
+  database:
+    sequence:
+      prefix: S
+
+redis:
+  primaryNode: localhost
+  readNode: localhost
+
+        

@@ -1,0 +1,14 @@
+{
+  "userName": "user@gmail.com",
+  "apiKey": "xHji908Klj74efghkJSGHlLGyfd543GFh",
+  "channel": "food",
+  "customerMobile": "0851111111",
+  "customerEmail": "test@gmail.com",
+  "jobType": "1",
+  "jobDate": "2015-05-01",
+  "startTime": "15:13",
+  "finishTime": "16:13",
+  "paymentType": "cash",
+  "locationList": [
+  ]
+}

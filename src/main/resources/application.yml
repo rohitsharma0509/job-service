@@ -1,0 +1,100 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    database: job_service_db
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      ddl-auto: none
+  flyway:
+    locations: classpath:db/migration
+    schemas: public
+    enabled: true
+  main:
+    banner-mode: "off"
+  application:
+    name: "job-service"
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+          
+mongo:
+  dbName: "jobs_db"
+
+secretsPath: "${SECRETS_PATH}"
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+server:
+  port: 8080
+
+logging:
+  enabled:
+    response-body: false
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.memorynotfound: DEBUG
+    org.zalando.logbook: TRACE
+
+kafka:
+  topic: rider-job-status
+  adjustment-topic: adjustment-topic
+  notification-topic: notification
+  consumerGroupId: rider-job-service-group
+  noOfConcurrentMessage: 1
+  server: ${BOOTSTRAP_SERVERS}
+  groupInstanceId: ${HOSTNAME}
+
+job:
+  database:
+    sequence:
+      prefix: S
+
+callback:
+  #mock sever url as temp till RBH integration
+  url: ${CALLBACK_URL_DEFAULT}
+pricingService:
+  path: ${PRICINGSERVICE_BASE_PATH}
+
+customerPricingService:
+  path: ${CUSTOMER_PRICING_SERVICE_BASE_PATH}
+
+riderProfileService:
+  path: ${RIDERPROFILE_SERVICE_BASE_PATH}
+
+
+rhinterfaceService:
+  path: ${RHINTERFACE_SERVICE_EXTERNAL_BASE_URL}
+
+locationService:
+  path: ${LOCATION_SERVICE_BASE_PATH}
+
+operationsPortal:
+  path: ${OPERATIONS_PORTAL_BASE_PATH}
+
+operationsService:
+  path: ${OPERATIONS_SERVICE_BASE_PATH}
+
+redis:
+  primaryNode: ${REDIS_PRIMARY_HOST}
+  readNode: ${REDIS_READ_HOST}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus,health
+  metrics:
+    web:
+      server:
+        auto-time-requests: true
+
+opentracing:
+  spring:
+    cloud:
+      redis:
+        enabled: false

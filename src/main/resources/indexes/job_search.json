@@ -1,0 +1,21 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "jobId": {
+        "store": false,
+        "type": "string"
+      },
+      "orderId": {
+        "analyzer": "lucene.keyword",
+        "searchAnalyzer": "lucene.keyword",
+        "store": false,
+        "type": "string"
+      },
+      "riderId": {
+        "store": false,
+        "type": "string"
+      }
+    }
+  }
+}

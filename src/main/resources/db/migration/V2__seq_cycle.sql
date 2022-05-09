@@ -1,0 +1,1 @@
+ALTER SEQUENCE IF EXISTS job_id_sequence CYCLE;

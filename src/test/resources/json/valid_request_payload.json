@@ -1,0 +1,36 @@
+{
+  "userName": "user@gmail.com",
+  "apiKey": "xHji908Klj74efghkJSGHlLGyfd543GFh",
+  "channel": "food",
+  "customerMobile": "0851111111",
+  "customerEmail": "test@gmail.com",
+  "jobType": "1",
+  "jobDate": "2015-05-01",
+  "startTime": "15:13",
+  "finishTime": "16:13",
+  "paymentType": "cash",
+  "remark": "Tower A the 3 floor\n abc 1",
+  "locationList": [
+    {
+      "addressName": "name",
+      "address": "start here",
+      "lat": "1.1",
+      "lng": "1.2",
+      "contactName": "1234567890",
+      "cashFee": "19",
+      "seq": 1
+
+    },
+
+    {
+      "addressName": "name",
+      "address": "end here",
+      "lat": "1.1",
+      "lng": "1.2",
+      "contactName": "1234567890",
+      "cashFee": "19",
+      "seq": 2
+
+    }
+  ]
+}

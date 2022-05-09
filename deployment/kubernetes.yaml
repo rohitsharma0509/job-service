@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: job-service
+  labels:
+    app: job-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: job-service
+  template:
+    metadata:
+      labels:
+        app: job-service
+    spec:
+      containers:
+        - name: job-service
+          image: 722619944496.dkr.ecr.us-east-2.amazonaws.com/job-service:v2
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: job-service-config
+                  key: MONGO_URL
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: job-service
+  namespace: default
+spec:
+  selector:
+    app: job-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8085
+  type: NodePort

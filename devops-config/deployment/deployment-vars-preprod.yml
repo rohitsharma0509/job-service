@@ -1,0 +1,29 @@
+---
+# Source: environment/templates/devops-config/deployment/deployment-vars-{{env}}.yml
+# This file was generated at  using generator Version: 
+
+DEPLOYMENT:
+    ENV: preprod
+    NAMESPACE: preprod
+    CONFIG_FILES:
+        - "src/main/resources/config/job-service.default.yaml"
+        - "src/main/resources/config/job-service.preprod.yaml"
+
+APP:
+    REPLICA: 3
+    HPA:
+      ENABLED: 0
+      MIN_REPLICA: 3
+      MAX_REPLICA: 3
+      CPU_UTILIZATION: 65
+      MEMORY_UTILIZATION: 80
+    CONTAINER:
+      MEMORY:
+        REQUEST: 1Gi
+        LIMIT: 1536Mi
+      CPU:
+        REQUEST: 1
+        LIMIT: 1
+    ENVIRONMENT:
+      - KEY: logs.Dir
+        VALUE: "/apps/logs/preprod/job-service/"

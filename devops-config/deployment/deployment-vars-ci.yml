@@ -1,0 +1,19 @@
+---
+# Source: environment/templates/devops-config/deployment/deployment-vars-{{env}}.yml
+# This file was generated at  using generator Version: 
+
+DEPLOYMENT:
+    ENV: ci
+    NAMESPACE: ci
+    CONFIG_FILES:
+        - "src/main/resources/config/job-service.default.yaml"
+        - "src/main/resources/config/job-service.ci.yaml"
+
+APP:
+    REPLICA: 1
+    CONTAINER:
+      MEMORY:
+        REQUEST: 1Gi
+    ENVIRONMENT:
+      - KEY: logs.Dir
+        VALUE: "/apps/logs/ci/job-service/"

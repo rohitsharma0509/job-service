@@ -1,0 +1,10 @@
+CALLBACK_URL_DEFAULT: "https://apis-prod.alp-robinhood.com/logistic/delivery/update-delivery-status"
+PRICINGSERVICE_BASE_PATH: "http://pricing-service.prod:8080"
+RIDERPROFILE_SERVICE_BASE_PATH: "http://rider-service.prod:8080"
+RHINTERFACE_SERVICE_EXTERNAL_BASE_URL: "https://rh-interface-service.api-prod.riderplatform.com"
+LOCATION_SERVICE_BASE_PATH: "http://location-service.prod:8080"
+OPERATIONS_PORTAL_BASE_PATH: "https://operations-portal.rider.robinhood.in.th"
+OPERATIONS_SERVICE_BASE_PATH: "http://operations-service.prod:8080"
+CUSTOMER_PRICING_SERVICE_BASE_PATH: "http://customer-pricing-service.prod:8080"
+REDIS_PRIMARY_HOST: rider-prod-elasticache-redis.rwdgg5.ng.0001.apse1.cache.amazonaws.com
+REDIS_READ_HOST:  rider-prod-elasticache-redis-ro.rwdgg5.ng.0001.apse1.cache.amazonaws.com

@@ -1,0 +1,52 @@
+spring:
+  main:
+    banner-mode: "off"
+  application:
+    name: "job-service"
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: jobs_db
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+
+server:
+  port: 8087
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.memorynotfound: DEBUG
+
+secretsPath: "src/test/resources/secret"
+
+kafka:
+  topic: rider-topic
+  consumerGroupId: groupid
+  noOfConcurrentMessage: 10
+  server: localhost:9092
+
+callback:
+  url: http://localhost:1080
+
+pricingService:
+  path: http://localhost:1080
+
+riderProfileService:
+  path: http://localhost:1080
+
+rhinterfaceService:
+  path: http://localhost:1080
+
+locationService:
+  path: http://localhost:1080
+
+operationsPortal:
+  path: https://operations-portal.web-preprod.riderplatform.com
+
+DIST_TRACER_ENDPOINT: ""
+COMPANY: ""
+PROJECT_NAME: ""

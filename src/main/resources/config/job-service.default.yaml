@@ -1,0 +1,6 @@
+default: default
+REDIS_PRIMARY_HOST: rider-dev-elasticache-redis.l9akz6.ng.0001.apse1.cache.amazonaws.com
+REDIS_READ_HOST: rider-dev-elasticache-redis-ro.l9akz6.ng.0001.apse1.cache.amazonaws.com
+COMPANY: "SCB"
+PROJECT_NAME: "rider"
+DIST_TRACER_ENDPOINT: "http://jaeger-operator-jaeger-collector.default:14268/api/traces"

@@ -1,0 +1,16 @@
+---
+# Source: environment/templates/devops-config/deployment/deployment-vars-{{env}}.yml
+# This file was generated at  using generator Version: 
+
+DEPLOYMENT:
+    ENV: qa
+    NAMESPACE: qa
+    CONFIG_FILES:
+        - "src/main/resources/config/job-service.default.yaml"
+        - "src/main/resources/config/job-service.qa.yaml"
+
+APP:
+    REPLICA: 3
+    ENVIRONMENT:
+      - KEY: logs.Dir
+        VALUE: "/apps/logs/qa/job-service/"
